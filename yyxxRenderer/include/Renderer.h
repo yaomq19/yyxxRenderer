@@ -74,6 +74,8 @@ public:
 	}
 	Texture2D createTexture2D(const char* path)
 	{
+		glActiveTexture(GL_TEXTURE0);
+		GL_TEXTURE1;
 		Texture2D t2d(path);
 		texture2Ds.push_back(t2d);
 		return t2d;
@@ -98,6 +100,8 @@ public:
 	std::vector<Texture2D> texture2Ds;
 
 	std::vector<RenderUnit> renderUnits;
+	//settings
+
 private:
 	/* init */
 	void glfwinit(unsigned int major_version, unsigned int minor_version);

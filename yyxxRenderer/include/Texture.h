@@ -7,10 +7,10 @@ class Texture2D
 {
 public:
 	unsigned int ID;
-	Texture2D()
+	/*Texture2D()
 	{
 		glGenTextures(1, &ID);
-	}
+	}*/
 	Texture2D(const char* path);
 	void set()
 	{
