@@ -9,6 +9,7 @@
 #include<Item.h>
 #include<Shader.h>
 #include<VAO.h>
+#include<Texture.h>
 //#include<stb_image.h>
 
 #include<vector>
@@ -71,7 +72,12 @@ public:
 		VAOs.push_back(vao);
 		return vao;
 	}
-
+	Texture2D createTexture2D(const char* path)
+	{
+		Texture2D t2d(path);
+		texture2Ds.push_back(t2d);
+		return t2d;
+	}
 	void createRenderUnit(VAO vao, Shader shader,DrawInstruction di)
 	{
 		renderUnits.push_back(RenderUnit(vao.ID,shader.ID,di));
@@ -89,7 +95,8 @@ public:
 	std::vector<VAO> VAOs;
 	std::vector<VBO> VBOs;
 	std::vector<EBO> EBOs;
-	
+	std::vector<Texture2D> texture2Ds;
+
 	std::vector<RenderUnit> renderUnits;
 private:
 	/* init */

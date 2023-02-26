@@ -28,6 +28,7 @@
     <ClCompile Include="src\Model.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="src\VAO.cpp" />
     <ClCompile Include="src\VBO.cpp" />
   </ItemGroup>
@@ -40,6 +41,7 @@
     <ClInclude Include="include\Renderer.h" />
     <ClInclude Include="include\Shader.h" />
     <ClInclude Include="include\stb_image.h" />
+    <ClInclude Include="include\Texture.h" />
     <ClInclude Include="include\VAO.h" />
     <ClInclude Include="include\VBO.h" />
   </ItemGroup>
@@ -97,23 +99,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\yaomq\Source\Repos\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
