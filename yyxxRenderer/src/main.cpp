@@ -20,12 +20,13 @@ int main()
 	Renderer r;
 	r.init(3, 3);
 	//生成纹理
-	r.createTexture2D("image/wall.jpg");
-
+	int ActiveTexture0 = r.createTexture2D("image/cat.jpeg");
+	int ActiveTexture1 = r.createTexture2D("image/wall.jpg");
 	//生成shader
 	Shader shader1 = r.createShader("shaderSourceCode/1.vs","shaderSourceCode/1.fs");
 	shader1.use();
-	shader1.setInt("texture1", 0);
+	shader1.setInt("texture1", ActiveTexture0);
+	shader1.setInt("texture2", ActiveTexture1);
 
 	//生成VBO，EBO，VAO，VAP
 	VBO vbo = r.createVBO(vertices, sizeof(vertices));

@@ -72,13 +72,19 @@ public:
 		VAOs.push_back(vao);
 		return vao;
 	}
-	Texture2D createTexture2D(const char* path)
+	int createTexture2D(const char* path)
 	{
-		glActiveTexture(GL_TEXTURE0);
-		GL_TEXTURE1;
+		if (numOfTextures >= 16) {
+			std::cout << "Failed to create texture: too many textures over 16" << std::endl;
+			return -1;
+		}
+		glActiveTexture(GL_TEXTURE0 + numOfTextures);
+		
 		Texture2D t2d(path);
-		texture2Ds.push_back(t2d);
-		return t2d;
+
+		int res = numOfTextures;
+		numOfTextures++;
+		return res;
 	}
 	void createRenderUnit(VAO vao, Shader shader,DrawInstruction di)
 	{
@@ -97,7 +103,9 @@ public:
 	std::vector<VAO> VAOs;
 	std::vector<VBO> VBOs;
 	std::vector<EBO> EBOs;
-	std::vector<Texture2D> texture2Ds;
+	//std::vector<Texture2D> texture2Ds;
+	unsigned int textures[16];
+	int numOfTextures = 0;
 
 	std::vector<RenderUnit> renderUnits;
 	//settings
