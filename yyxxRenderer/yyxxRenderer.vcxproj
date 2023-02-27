@@ -99,8 +99,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -109,8 +109,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\githubRepositories\yyxxRenderer\yyxxRenderer\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
