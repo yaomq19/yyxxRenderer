@@ -1,8 +1,8 @@
 #pragma once
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
-//#include <glm/glm.hpp>
-//#include <glm/gtc/matrix_transform.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include<Camera.h>
 #include<Light.h>
@@ -38,7 +38,9 @@ struct RenderUnit
 	unsigned int VAOId;
 	unsigned int ShaderId;
 	DrawInstruction di;
-	RenderUnit(unsigned int a, unsigned int b, DrawInstruction c) :VAOId(a), ShaderId(b), di(c){}
+	std::vector<glm::mat4>models;
+	RenderUnit(unsigned int a, unsigned int b, DrawInstruction c,
+		std::vector<glm::mat4> d) :VAOId(a), ShaderId(b), di(c),models(d){}
 };
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 class Renderer
@@ -86,11 +88,22 @@ public:
 		numOfTextures++;
 		return res;
 	}
-	void createRenderUnit(VAO vao, Shader shader,DrawInstruction di)
+	void createRenderUnit(VAO vao, Shader shader,DrawInstruction di,std::vector<glm::mat4> models)
 	{
-		renderUnits.push_back(RenderUnit(vao.ID,shader.ID,di));
+		renderUnits.push_back(RenderUnit(vao.ID,shader.ID,di, models));
 	}
 	
+	void setView(glm::vec3 trans) {
+		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+		view = glm::translate(view, trans);
+		this->view = view;
+	}
+	void setProjection(float angle, float near, float far) {
+		glm::mat4 projection = glm::mat4(1.0f);
+		projection = glm::perspective(glm::radians(angle), (float)SCR_WIDTH / (float)SCR_HEIGHT, near, far);
+		this->projection = projection;
+	}
+
 private:
 	const int SCR_WIDTH = 800;
 	const int SCR_HEIGHT = 600;
@@ -106,6 +119,9 @@ public:
 	//std::vector<Texture2D> texture2Ds;
 	unsigned int textures[16];
 	int numOfTextures = 0;
+
+	glm::mat4 view = glm::mat4(1.0f);;
+	glm::mat4 projection = glm::mat4(1.0f);;
 
 	std::vector<RenderUnit> renderUnits;
 	//settings

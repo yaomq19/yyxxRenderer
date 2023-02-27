@@ -28,16 +28,22 @@ bool Renderer::render()
 		// 渲染main函数中自定义模型
 		for (auto& it : renderUnits)
 		{
-			glUseProgram(it.ShaderId);
-			glBindVertexArray(it.VAOId);
-			if (it.di.cmd == "glDrawArrays"){
-				if (it.di.primitive == "GL_TRIANGLES") {
-					glDrawArrays(GL_TRIANGLES, it.di.start, it.di.count);
+			glUniformMatrix4fv(glGetUniformLocation(it.ShaderId, "view"), 1, GL_FALSE, &(view[0][0]));
+			glUniformMatrix4fv(glGetUniformLocation(it.ShaderId, "projection"), 1, GL_FALSE, &(projection[0][0]));
+			for (auto& model : it.models) {
+				glUseProgram(it.ShaderId);
+				glUniformMatrix4fv(glGetUniformLocation(it.ShaderId, "model"), 1, GL_FALSE, &(model[0][0]));
+				
+				glBindVertexArray(it.VAOId);
+				if (it.di.cmd == "glDrawArrays") {
+					if (it.di.primitive == "GL_TRIANGLES") {
+						glDrawArrays(GL_TRIANGLES, it.di.start, it.di.count);
+					}
 				}
-			}
-			else if (it.di.cmd == "glDrawElements"){
-				if (it.di.primitive == "GL_TRIANGLES"){
-					glDrawElements(GL_TRIANGLES, it.di.count, GL_UNSIGNED_INT, (void*)it.di.start);
+				else if (it.di.cmd == "glDrawElements") {
+					if (it.di.primitive == "GL_TRIANGLES") {
+						glDrawElements(GL_TRIANGLES, it.di.count, GL_UNSIGNED_INT, (void*)it.di.start);
+					}
 				}
 			}
 		}
