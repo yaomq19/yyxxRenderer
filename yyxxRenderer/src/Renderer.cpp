@@ -35,6 +35,10 @@ bool Renderer::render()
 {
 	while (!glfwWindowShouldClose(window))
 	{
+		for (auto& it : modelsWithShaders)
+		{
+			it.first.Draw(*(it.second));
+		}
 		//what input would use
 		float currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrameTime;

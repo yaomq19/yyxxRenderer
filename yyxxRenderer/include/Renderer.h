@@ -12,6 +12,7 @@
 #include<Shader.h>
 #include<VAO.h>
 #include<Texture.h>
+#include<Model.h>
 //#include<stb_image.h>
 
 #include<vector>
@@ -19,6 +20,7 @@
 #include<iostream>
 #include<fstream>
 #include <sstream>
+#include<utility>
 
 struct DrawInstruction
 {
@@ -75,6 +77,7 @@ private:
 	std::vector<VAO> VAOs;
 	std::vector<VBO> VBOs;
 	std::vector<EBO> EBOs;
+	std::vector<std::pair<Model,Shader*>> modelsWithShaders;
 	int numOfTextures = 0;
 	unsigned int textures[16];
 	std::vector<Light> lights;

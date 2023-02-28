@@ -30,12 +30,6 @@
     <ClCompile Include="src\Camera.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Model.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Item.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\Light.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -51,6 +45,9 @@
     <ClCompile Include="src\Texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Model.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Renderer.h">
@@ -60,12 +57,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\Camera.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Model.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Item.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\Light.h">
@@ -84,6 +75,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Model.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
