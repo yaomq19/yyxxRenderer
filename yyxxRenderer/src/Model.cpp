@@ -1,5 +1,5 @@
 #include<Model.h>
-#define STB_IMAGE_IMPLEMENTATION
+//#define STB_IMAGE_IMPLEMENTATION
 #include<stb_image.h>
 Texture::Texture(const char* path)
 {
@@ -124,14 +124,14 @@ void Model::processNode(aiNode* node, const aiScene* scene)
 {
 
 }
-Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
-{
-
-}
-std::vector<Texture> Model::loadMaterialTextures
-(aiMaterial* mat,
-	aiTextureType type,
-	std::string typeName)
-{
-
-}
+//Mesh Model::processMesh(aiMesh* mesh, const aiScene* scene)
+//{
+//	
+//}
+//std::vector<Texture> Model::loadMaterialTextures
+//(aiMaterial* mat,
+//	aiTextureType type,
+//	std::string typeName)
+//{
+//
+//}

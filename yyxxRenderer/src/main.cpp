@@ -66,7 +66,6 @@ int main()
 	};
 	Renderer r;
 	r.init(3, 3);
-    r.setProjection(45.f,0.1f,100.0f);
 	//Éú³ÉÎÆÀí
 	int ActiveTexture0 = r.createTexture2D("image/cat.jpeg");
 	int ActiveTexture1 = r.createTexture2D("image/wall.jpg");

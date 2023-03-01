@@ -4,6 +4,7 @@
 #include<glad/glad.h>
 #include<VBO.h>
 #include<EBO.h>
+#include<vector>
 struct VertexAttribPointer
 {
 	GLuint layout;

@@ -8,12 +8,10 @@
 
 #include<Camera.h>
 #include<Light.h>
-#include<Item.h>
 #include<Shader.h>
 #include<VAO.h>
 #include<Texture.h>
 #include<Model.h>
-//#include<stb_image.h>
 
 #include<vector>
 #include<unordered_map>
@@ -81,7 +79,6 @@ private:
 	int numOfTextures = 0;
 	unsigned int textures[16];
 	std::vector<Light> lights;
-	std::vector<Item> items;
 	std::vector<Shader> shaders;
 	std::vector<RenderUnit> renderUnits;
 private:
