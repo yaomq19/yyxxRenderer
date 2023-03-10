@@ -9,20 +9,22 @@
 #include<assimp/Importer.hpp>
 #include<assimp/scene.h>
 #include<assimp/postprocess.h>
-
+using namespace std;
+unsigned int TextureFromFile(const char* path, const string& directory);
+//∂•µ„
 struct Vertex
 {
-	glm::vec3 Pos;
+	glm::vec3 Position;
 	glm::vec3 Normal;
 	glm::vec2 TexCoords;
 };
+//Œ∆¿Ì
 class Texture
 {
 public:
 	unsigned int id;
-	std::string type;
-	Texture() {}
-	Texture(const char* path);
+	string type;
+	string path;
 };
 class Mesh
 {
@@ -31,21 +33,24 @@ public:
 	std::vector<unsigned int>indices;
 	std::vector<Texture> texture;
 
+	Mesh();
 	Mesh(std::vector<Vertex> vertices,
 		std::vector<unsigned int>indices,
 		std::vector<Texture> texture);
 	void Draw(Shader shader);
-private:
+public:
 	unsigned int VAO, VBO, EBO;
 	void setupMesh();
 };
 class Model
 {
 public:
+	Model();
 	Model(const char* path);
 	Model(std::vector<Mesh> meshes);
 	void Draw(Shader shader);
-private:
+public:
+	vector<Texture> textures_loaded;
 	std::vector<Mesh> meshes;
 	std::string directory;
 	void loadModel(std::string path);

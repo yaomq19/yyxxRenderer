@@ -24,28 +24,10 @@
     <ClCompile Include="src\Renderer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Shader.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Camera.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Light.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\VAO.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\VBO.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\EBO.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Texture.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\Model.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,31 +35,10 @@
     <ClInclude Include="include\Renderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="include\Shader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Camera.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Light.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\stb_image.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\VAO.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\VBO.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\EBO.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Texture.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="include\Model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
