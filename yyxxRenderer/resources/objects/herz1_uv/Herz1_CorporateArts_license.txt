@@ -1,0 +1,20 @@
+License info for "Herz1" 
+by CorporateArts, Stefan Beckhusen 
+6 Dec. 2019
+www.3rdArt.de 
+
+"Herz1" is a simple 3D model to use in various 3D and 2D software. 
+"Herz1" is not anatomy correct, it's a quick sculpt of a natural looking heart. 
+"Herz1" by CorporateArts is a freebie and you can use it in your private and commercial works in 3D and in 2D. 
+You are only not allowed to sell this 3D model as itself or within any package. 
+
+This package includes: 
+
+Herz1_uv.obj
+Herz1_uv.mtl
+Herz1_uvmap. jpg 
+Herz1_tex.jpg (simple texture, you may need a more detailed one)
+Herz1_dis.jpg (grayscale for displacement or bumps) 
+
+Happy rendering, 
+may the force be with you :) 
