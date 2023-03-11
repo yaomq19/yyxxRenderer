@@ -27,7 +27,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 100.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -81,7 +81,17 @@ public:
 
         // configure global opengl state
         // -----------------------------
-        glEnable(GL_DEPTH_TEST);
+        #ifdef MY_DEPTH_TEST
+            glEnable(GL_DEPTH_TEST);
+        #endif // !MY_DEPTH_TEST
+        #ifdef MY_STENCIL_TEST
+            glEnable(GL_STENCIL_TEST);
+        #endif // !MY_DEPTH_TEST
+        #ifdef MY_BLENDER
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        #endif // !MY_DEPTH_TEST
+        
 	}
     void render()
     {
@@ -91,7 +101,7 @@ public:
             deltaTime = currentFrame - lastFrame;
             lastFrame = currentFrame;
             processInput(window);
-            glClearColor(0.8f, 0.8f, 0.8f, 1.0f);
+            glClearColor(0.0f, 0.8f, 0.8f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             for (auto& it : models) {
                 //对shader进行赋值、修改等
@@ -127,7 +137,6 @@ public:
         glfwTerminate();
     }
 };
-
 void processInput(GLFWwindow* window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
