@@ -7,9 +7,11 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include <learnopengl/shader_m.h>
+#include <learnopengl/shader.h>
 #include <learnopengl/camera.h>
 #include <learnopengl/model.h>
+#include <learnopengl/Light.h>
+
 #include <vector>
 #include <utility>
 #define md first
@@ -38,6 +40,7 @@ class Renderer
 public:
     GLFWwindow* window;
     vector<pair<Model, Shader>> models;
+    vector<Light> lights;
 	bool init()
 	{
 		glfwInit();
@@ -93,11 +96,16 @@ public:
             for (auto& it : models) {
                 //对shader进行赋值、修改等
                 it.sd.use();
-                it.sd.setVec3("light.position", glm::vec3(1.2f, 1.0f, 2.0f));
                 it.sd.setVec3("viewPos", camera.Position);
-                it.sd.setVec3("light.ambient", 0.2f, 0.2f, 0.2f);
-                it.sd.setVec3("light.diffuse", 0.5f, 0.5f, 0.5f);
-                it.sd.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+                it.sd.setInt("n_light", 2);
+                it.sd.setVec3("light[0].position", glm::vec3(1.2f, 1.0f, 2.0f));
+                it.sd.setVec3("light[0].ambient", 0.2f, 0.2f, 0.2f);
+                it.sd.setVec3("light[0].diffuse", 0.5f, 0.5f, 0.5f);
+                it.sd.setVec3("light[0].specular", 1.0f, 1.0f, 1.0f);
+                it.sd.setVec3("light[1].position", glm::vec3(0.2f, 0.0f, -2.5f));
+                it.sd.setVec3("light[1].ambient", 0.2f, 0.2f, 0.2f);
+                it.sd.setVec3("light[1].diffuse", 0.5f, 0.5f, 0.5f);
+                it.sd.setVec3("light[1].specular", 1.0f, 1.0f, 1.0f);
                 it.sd.setFloat("material.shininess", 64.0f);
                 glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
                 glm::mat4 view = camera.GetViewMatrix();

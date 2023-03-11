@@ -23,9 +23,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\learnopengl\shader_m.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="include\stb_image.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -35,13 +32,16 @@
     <ClInclude Include="include\learnopengl\model.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="include\learnopengl\shader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="include\learnopengl\mesh.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\learnopengl\Renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\learnopengl\Light.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\learnopengl\shader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
