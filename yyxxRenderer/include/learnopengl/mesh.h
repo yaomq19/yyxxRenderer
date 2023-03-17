@@ -82,7 +82,7 @@ public:
 
             glBindTexture(GL_TEXTURE_2D, textures[i].id);
         }
-
+        
         // draw mesh
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, static_cast<unsigned int>(indices.size()), GL_UNSIGNED_INT, 0);
